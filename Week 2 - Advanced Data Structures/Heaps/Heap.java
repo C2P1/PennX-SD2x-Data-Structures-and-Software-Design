@@ -17,8 +17,8 @@ public class Heap {
     public void add(int value) {
         if (size == values.length) {
             try {
-                throw new HeapException("The Heap is full");
-            } catch (HeapException e) {
+                throw new HeapSizeException("The Heap is full");
+            } catch (HeapSizeException e) {
                 e.printStackTrace();
             }
         }
@@ -39,8 +39,8 @@ public class Heap {
     public int extract() {
         if (size == 0) {
             try {
-                throw new HeapException("The Heap is empty");
-            } catch (HeapException e) {
+                throw new HeapSizeException("The Heap is empty");
+            } catch (HeapSizeException e) {
                 e.printStackTrace();
             }
         }
