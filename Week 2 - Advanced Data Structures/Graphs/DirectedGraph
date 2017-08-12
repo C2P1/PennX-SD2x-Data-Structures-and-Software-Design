@@ -1,0 +1,32 @@
+/*
+ * Graph using an Adjacency Set
+ */
+
+public class DirectedGraph extends Graph {
+
+    public DirectedGraph() {
+        super();
+    }
+
+    @Override
+    public boolean addEdge(Node node1, Node node2, int weight) {
+
+        // will only add if node not already in graph
+        addNode(node1);
+        addNode(node2);
+
+        // directed graph, therefore only one direction
+        boolean addSuccess = addEdgeFromTo(node1, node2, weight);
+
+        if (addSuccess) {
+            incrementNumEdges();
+        }
+
+        return addSuccess;
+    }
+
+    @Override
+    public boolean removeEdge(Node node1, Node node2, int weight) {
+        return false;
+    }
+}
